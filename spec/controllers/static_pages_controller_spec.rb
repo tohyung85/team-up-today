@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe StaticPagesController, type: :controller do
+  let (:user) { FactoryGirl.create(:user) }
   describe '#landing_page' do
     context 'user accesses page' do
       it 'should return success' do
