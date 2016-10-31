@@ -20,6 +20,9 @@ gem 'sass-rails'
 # Figaro
 gem 'figaro', '>= 1.0.0'
 
+# Simple Forms
+gem 'simple_form'
+
 # Devise
 gem 'devise', '>= 3.2.4'
 
