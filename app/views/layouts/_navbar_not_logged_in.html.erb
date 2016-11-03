@@ -16,27 +16,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Blogging</a></li>
-            <li><a href="#">E-Commerce</a></li>
-            <li><a href="#">Mastermind</a></li>
-          </ul>
-        </li>
-        <li><%= link_to 'My Groups', '#' %></li>
-        <li><%= link_to 'Find Partners', '#' %></li>
+        <li><%= link_to 'People', '#' %></li>
+        <li><%= link_to 'Groups', '#' %></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">        
         <% if current_user.present? %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Profile <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">My Projects</a></li>
-              <li><a href="#">View Profile</a></li>
-            </ul>
-          </li>
+          <li><%= link_to 'My Groups', '#' %></li>
+          <li><%= link_to 'My Messages', '#' %></li>
+          <li><%= link_to 'Add Group', '#' %></li>
+          <li><%= link_to 'Profile', '#' %></li>
         <% end %>          
         <% if current_user.present? %>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>

@@ -23,6 +23,9 @@ gem 'figaro', '>= 1.0.0'
 # Simple Forms
 gem 'simple_form'
 
+# jQuery UI
+gem 'jquery-ui-rails'
+
 # Devise
 gem 'devise', '>= 3.2.4'
 

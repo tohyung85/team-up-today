@@ -1,16 +1,20 @@
-$blue : #00AEDB;
-$green : #8DC53E;
-$light-blue : #60C9E7;
-$dark-brown : #605C50;
-$grey : #7E7F81;
+$font: 'futura_oblique';
+$dark-green : #206E80;
 
 nav.navbar.navbar-default {  
+  font-family: $font;
   z-index: 999;
-  background-color: $blue;
+  background-color: $dark-green;
   color: white;
   border-radius: 0px;
   border: none;
   margin: 0px;
+  height: 100px;
+}
+
+.navbar-header {
+  display: flex;
+  align-items: center;
 }
 
 nav.navbar.navbar-default a {
@@ -19,21 +23,32 @@ nav.navbar.navbar-default a {
 
 .navbar.navbar-default .navbar-nav > li > a {
   font-size: 18px;
-  font-family: 'Josefin Sans', sans-serif;
   color: white;
 }
 
 .navbar.navbar-default .navbar-nav > li > a:hover {
-  color: $grey;
-}
-
-.navbar-header .navbar-brand {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 25px;
+  color: grey;
 }
 
 nav.navbar.navbar-default .nav.navbar-nav > .active > a {
-  background-color: $blue;
-  color: $grey;
+  background-color: blue;
+  color: blue;
+}
+
+.navbar-collapse .nav.navbar-nav .dropdown.open .dropdown-toggle {
+  background-color:#104954;
+  color: white;
+}
+
+.dropdown .dropdown-menu {
+  border: none;
+  background-color:#104954;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav{
+      height: 100px;
+      display:flex;
+      align-items: flex-end;
+    }
 }
