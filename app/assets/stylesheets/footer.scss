@@ -1,0 +1,51 @@
+$grey: #E7E6E2;
+$blue: #94B4BB;
+$border-red: #BD5B73;
+$green: #B6D7A8;
+$yellow: #FCD04C;
+$red: #CA0000;
+$font: 'futura_oblique';
+$dark-green : #206E80;
+
+$footer-height: 60px;
+$footer-height-mobile:60px;
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: $footer-height;
+  background-color: $dark-green;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: -$footer-height;
+  border-radius:0px;
+}
+
+.footer .container {
+  padding:0;
+  margin: 0;
+}
+
+.footer a {  
+  color: white;
+}
+
+.footer a:hover {
+  color: $grey;
+  text-decoration: none;
+}
