@@ -10,7 +10,7 @@
       </button>
       <%= link_to root_path, class: 'navbar-brand' do%>
         <%= image_tag('logo.png', class: 'site-logo', size: '100') %>
-      <% end %>
+      <% end %>      
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -24,7 +24,6 @@
             <li><a href="#">Mastermind</a></li>
           </ul>
         </li>
-        <li><%= link_to 'My Groups', '#' %></li>
         <li><%= link_to 'Find Partners', '#' %></li>
       </ul>
 
@@ -34,6 +33,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Profile <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#">My Projects</a></li>
+              <li><%= link_to 'My Groups', '#' %></li>              
               <li><a href="#">View Profile</a></li>
             </ul>
           </li>
@@ -41,10 +41,9 @@
         <% if current_user.present? %>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>          
-        <% end %>
-        
+          <li><%= link_to 'Sign Up', '#', class: 'signup-button', 'data-target' => "#myModal", 'data-toggle' => "modal" %></li>
+          <li><%= link_to 'Log In', '#', class: 'login-button', 'data-target' => "#myModal1", 'data-toggle' => "modal" %></li>          
+        <% end %>        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

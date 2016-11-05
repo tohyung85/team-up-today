@@ -2,6 +2,7 @@
     <div class='intro-text col-xs-12'>
       <h3 class='col-xs-12 col-sm-10 col-sm-offset-1'>Let's Team Up is a networking platform which allows members to create group projects with Let's Team Up Tools!</h3>
     </div>
+   
     <div class='group-types-container col-xs-12'>
       <div class='group-types-inner col-xs-12 col-sm-10 col-sm-offset-1'>
         <div class='group-type'>
@@ -18,4 +19,66 @@
         </div>
       </div>
     </div>
+    
+    <div class='work-flow-container col-xs-12'>
+      <div class='how-it-works-logo-container'>
+        <%= image_tag('how-it-works.png', class: 'how-it-works-logo')%>
+      </div>
+      <div class='work-flow-inner col-xs-12 col-sm-10 col-sm-offset-1'>       
+        <div class='work-flow'>
+          <%= image_tag('step1.png') %>
+          <%= image_tag('number1.png') %>
+        </div>
+        <div class='work-flow'>
+          <%= image_tag('step2.png') %>
+          <%= image_tag('number2.png') %>
+        </div>
+        <div class='work-flow'>
+          <%= image_tag('step3.png') %>
+          <%= image_tag('number3.png') %>
+        </div>                
+      </div>
+    </div>
+
+    <div class='why-team-up-container col-xs-12'>
+      <%= image_tag('why-team-up.png')%>
+      <br/><br/>
+      <%= image_tag('sales-pitch.png')%>
+    </div>
+
+    <div class='tool-description-container col-xs-12'>
+      <div class='tool-description-logo'>
+        <%= image_tag('tool-description-logo.png') %>
+      </div>
+
+      <div class='task-and-chat-tool-container col-xs-12'>
+        <div class='task-tool-container'>
+          <div class='task-tool-background'>
+            <%= image_tag('weekly-tasktool.png') %>
+          </div>
+          <%= image_tag('weekly-tasktool.png') %>
+        </div>
+        <div class='chat-tool-container'>
+          <div class='chat-tool-background'>
+            <%= image_tag('video-tchat.png') %>
+          </div>
+          <%= image_tag('weekly-tchat.png') %>
+        </div>
+      </div>
+
+      <div class='site-video-container'>
+        <%= image_tag('checkout-video.png', class: 'checkout-video', size: '200') %>
+        <%= image_tag('video-placeholder.png', class: 'site-video') %>
+      </div>
+
+      <div class='sign-up-button'>
+        <%= link_to(root_path) do %>
+         <%= image_tag('sign-up-now.png')%>
+        <% end %>
+      </div>
+
+    </div>
+
 </div>
+
+

@@ -1,0 +1,92 @@
+$grey: #E7E6E2;
+$blue: #94B4BB;
+$border-red: #BD5B73;
+$green: #B6D7A8;
+$yellow: #FCD04C;
+$red: #CA0000;
+$font: 'futura_oblique';
+$dark-green : #206E80;
+
+$footer-height: 60px;
+$footer-height-mobile:90px;
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: $footer-height;
+}
+.footer {
+  position: absolute;
+  bottom: -$footer-height;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: $footer-height;
+  background-color: $dark-green;
+  color: white;
+  margin-bottom: -$footer-height;
+  border-radius:0px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.footer{
+  padding: 0;
+  margin: 0;
+}
+
+.footer-container {
+  padding: 10px;
+  padding-bottom: 0px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.site-credits p{
+  margin:0;
+  padding: 0;
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo h3{
+  margin: 0px;
+  padding: 0px;
+  font-size: 18px;
+}
+
+.contact-container a{
+  float: right;
+}
+
+.footer-column {
+  width: 33.33%;
+}
+
+.footer a {  
+  color: white;
+}
+
+.footer a:hover {
+  color: $grey;
+  text-decoration: none;
+}
+
+@media (max-width: 488px) {
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: $footer-height-mobile;
+  }
+  .footer {
+    bottom: 0;
+    height: $footer-height-mobile;
+    margin-bottom: -$footer-height-mobile;    
+  }
+}
