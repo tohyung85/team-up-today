@@ -1,0 +1,53 @@
+$grey: #E7E6E2;
+$blue: #94B4BB;
+$border-red: #BD5B73;
+$dark-green : #206E80;
+$green: #B6D7A8;
+$yellow: #FCD04C;
+$red: #CA0000;
+$pink: #D45D78;
+$font: 'futura_oblique';
+
+.modal-body {
+  border-radius: 0px;
+  border: 10px solid $yellow;
+  background-color: $dark-green;
+}
+
+.signup-form-and-header {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-header {
+  background-color: $yellow;
+  color: $pink;
+  text-align: center;
+  font-size: 20px;
+  padding: 8px;
+}
+
+.signup-form {
+  width: 80%;
+  margin: auto;
+}
+
+.modal-form-input {
+  border-radius: 0px !important;
+}
+
+.form-actions .signup-button {
+  background-image: url('background-sign-up.png');
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: contain;  
+  margin-right: 20px;
+}
+
+.form-actions .form-signup-button {
+  padding: 40px;
+  background-color: transparent;
+  font-size: 20px !important;
+  color: white;
+}
