@@ -124,15 +124,23 @@ $font: 'futura_oblique';
   padding: 20px;
 }
 
+// .site-video {
+//   width: 
+// }
+
 .sign-up-button {
   margin: 40px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .checkout-video{
     order: 2;
   }
   .site-video{
     order: 1;
+  }
+  .site-video-container {
+    padding: 0px;
+    margin-top: 20px;
   }
 }
