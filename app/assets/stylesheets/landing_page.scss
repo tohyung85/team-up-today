@@ -39,6 +39,15 @@ $font: 'futura_oblique';
   flex-direction: column;
 }
 
+.group-type a {
+  color: black;
+}
+
+.group-type a:hover {
+  text-decoration: none;
+  color: black;
+}
+
 .start-button {
   margin-top: 5px;
   border-radius: 100%;
@@ -123,10 +132,6 @@ $font: 'futura_oblique';
   justify-content: space-around;
   padding: 20px;
 }
-
-// .site-video {
-//   width: 
-// }
 
 .sign-up-button {
   margin: 40px;

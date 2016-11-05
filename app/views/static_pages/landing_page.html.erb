@@ -6,16 +6,22 @@
     <div class='group-types-container col-xs-12'>
       <div class='group-types-inner col-xs-12 col-sm-10 col-sm-offset-1'>
         <div class='group-type'>
-          <%= image_tag('e-commerce-group-red.png', class: 'group-type-image') %>
-          <div class='start-button ecommerce'>Let's Start</div>
+          <%= link_to('#') do %>
+            <%= image_tag('e-commerce-group-red.png', class: 'group-type-image') %>
+            <div class='start-button ecommerce'>Let's Start</div>
+          <% end %>
         </div>
         <div class='group-type'>
-          <%= image_tag('blogging-group-yellow.png', class: 'group-type-image') %>
-          <div class='start-button blogging'>Let's Start</div>
+          <%= link_to('#') do %>
+            <%= image_tag('blogging-group-yellow.png', class: 'group-type-image') %>
+            <div class='start-button blogging'>Let's Start</div>
+          <% end %>
         </div>
         <div class='group-type'>
-          <%= image_tag('mastermind-group-green.png', class: 'group-type-image') %>
-          <div class='start-button mastermind'>Let's Start</div>
+          <%= link_to('#') do %>
+            <%= image_tag('mastermind-group-green.png', class: 'group-type-image') %>
+            <div class='start-button mastermind'>Let's Start</div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -54,7 +60,7 @@
       <div class='task-and-chat-tool-container col-xs-12'>
         <div class='task-tool-container'>
           <div class='task-tool-background'>
-            <%= image_tag('weekly-tasktool.png') %>
+            <%= image_tag('task-tool-image.png') %>
           </div>
           <%= image_tag('weekly-tasktool.png') %>
         </div>
