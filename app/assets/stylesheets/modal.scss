@@ -8,6 +8,10 @@ $red: #CA0000;
 $pink: #D45D78;
 $font: 'futura_oblique';
 
+.modal .modal-dialog {
+  width: 50%;
+}
+
 .modal-body {
   border-radius: 0px;
   border: 10px solid $yellow;
@@ -18,6 +22,8 @@ $font: 'futura_oblique';
   padding: 40px;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  width: 80%
 }
 
 .signup-header {
@@ -42,12 +48,106 @@ $font: 'futura_oblique';
   background-repeat: no-repeat;
   background-position: center; 
   background-size: contain;  
-  margin-right: 20px;
+
 }
 
 .form-actions .form-signup-button {
   padding: 40px;
   background-color: transparent;
-  font-size: 20px !important;
-  color: white;
+  font-size: 20px;
+  color: black;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-form-and-header {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.login-header {
+  background-image: url('background-already-registered.png');
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: contain;  
+  margin-right: 20px;
+  background-color: transparent;
+  font-size: 20px;
+  color: white;  
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.login-header-text {
+  text-align: center;
+  margin: 0;
+  color: black;
+}
+
+.form-actions .login-button {
+  background-image: url('background-login.png');
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: contain;  
+  margin-right: 20px;
+}
+
+.form-actions .form-login-button {
+  padding: 40px;
+  background-color: transparent;
+  font-size: 20px;
+  color: black;
+}
+
+.forget-password-link {
+  color: black;
+}
+
+.form-actions .already-registered-button {
+  background-image: url('background-already-registered.png');
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: contain;
+}
+
+.form-actions .already-registered-button {
+  padding: 25px;
+  margin: 0px;
+  background-color: transparent;
+  font-size: 17px;
+  color: black;
+  text-align: center;
+}
+
+.form-actions a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .modal .modal-dialog {
+    width: 100%;
+  }
+  .signup-form-and-header {
+    padding: 20px;
+    width: 100%
+  }  
+  .signup-form {
+    width: 100%;
+    margin: auto;
+  }  
+
+  .form-actions.registration-form-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

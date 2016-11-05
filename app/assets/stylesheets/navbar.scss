@@ -14,7 +14,8 @@ nav.navbar.navbar-default {
 
 .navbar-header {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 nav.navbar.navbar-default a {
@@ -50,6 +51,7 @@ nav.navbar.navbar-default .nav.navbar-nav > .active > a {
   background-repeat: no-repeat;
   background-position: center; 
   background-size: contain;
+  color: black;
 }
 
 .signup-button {
@@ -58,6 +60,11 @@ nav.navbar.navbar-default .nav.navbar-nav > .active > a {
   background-position: center; 
   background-size: contain;  
   margin-right: 20px;
+  color: black;
+}
+
+.navbar-collapse {
+  background-color: $dark-green;
 }
 
 @media (min-width: 768px) {
@@ -65,5 +72,14 @@ nav.navbar.navbar-default .nav.navbar-nav > .active > a {
       height: 100px;
       display:flex;
       align-items: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .signup-button {
+      background-image: none;
+    }
+    .login-button {
+      background-image: none;
     }
 }

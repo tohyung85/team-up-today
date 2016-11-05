@@ -10,7 +10,7 @@
       </button>
       <%= link_to root_path, class: 'navbar-brand' do%>
         <%= image_tag('logo.png', class: 'site-logo', size: '100') %>
-      <% end %>
+      <% end %>      
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,7 +42,7 @@
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'Sign Up', '#', class: 'signup-button', 'data-target' => "#myModal", 'data-toggle' => "modal" %></li>
-          <li><%= link_to 'Log In', new_user_registration_path, class: 'login-button' %></li>          
+          <li><%= link_to 'Log In', '#', class: 'login-button', 'data-target' => "#myModal1", 'data-toggle' => "modal" %></li>          
         <% end %>        
       </ul>
     </div><!-- /.navbar-collapse -->
