@@ -21,4 +21,9 @@ class RegistrationsController < Devise::RegistrationsController
       redirect_to root_path
     end
   end
+
+  def sign_up_params
+    devise_parameter_sanitizer.sanitize(:sign_up)
+    params.require(:user).permit(:email, :password, profile_attributes: [:first_name, :last_name])
+  end
 end

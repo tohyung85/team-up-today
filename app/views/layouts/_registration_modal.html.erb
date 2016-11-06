@@ -8,11 +8,18 @@
           <h2 class='signup-header'>Sign Up Today!</h2>
           <br/>
           <div class='signup-form'>
+            <% resource.build_profile %>
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= f.error_notification %>
 
               <div class="form-inputs">
-                <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'Email', input_html: {class: 'modal-form-input'} %>
+                <%= f.simple_fields_for :profile do |p| %>
+                  <%= p.input :first_name, required: true, autofocus: true, label: false, placeholder: 'First Name', input_html: {class: 'modal-form-input'} %>
+                  <br/>
+                  <%= p.input :last_name, required: true, label: false, placeholder: 'Last Name', input_html: {class: 'modal-form-input'} %>
+                <% end %>
+                <br/>
+                <%= f.input :email, required: true, label: false, placeholder: 'Email', input_html: {class: 'modal-form-input'} %>
                 <br/>
                 <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false, placeholder: 'Password', input_html: {class: 'modal-form-input'}  %>
                 <br/>

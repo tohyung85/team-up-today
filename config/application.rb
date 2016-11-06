@@ -26,6 +26,6 @@ module TeamUpToday
     # Precompile additional assets
     config.assets.precompile += %w(.svg .eot .woff .ttf)
 
-    config.autoload_paths += %w(#{config.root}/lib)
+    config.autoload_paths << "#{Rails.root}/app/lib"
   end
 end
