@@ -1,3 +1,9 @@
 <h1>Edit User Profile</h1>
 
-<%= s
+<%= simple_form_for @profile do |f| %>
+  <%= f.input :avatar %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+
+  <%= f.submit 'Update' %>
+<% end %>

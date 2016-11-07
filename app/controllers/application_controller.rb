@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def render_not_found(status = :not_found)
-    render text: '#{status.to_s.titleize}', status: status
-  end  
+    render text: status.to_s.titleize.to_s, status: status
+  end
 
   def record_not_found
     render_not_found
