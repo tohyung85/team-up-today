@@ -24,6 +24,14 @@ RSpec.describe ProfilesController, type: :controller do
         get :edit, id: user.id
         expect(response).to have_http_status(:success)
       end
+      it 'should return unauthorized if profile is not current user profile' do
+        get :edit, id: user1.id
+        expect(response).to have_http_status(:unauthorized)
+      end
+      it 'should return 404 not found if id is not found' do
+        get :edit, id: 'yolo'
+        expect(response).to have_http_status(:not_found)
+      end
     end
 
     context 'user not signed in' do
