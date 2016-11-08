@@ -20,6 +20,9 @@ gem 'sass-rails'
 # Carrierwave
 gem 'carrierwave'
 
+# Carrierwave AWS
+gem 'carrierwave-aws'
+
 # Figaro
 gem 'figaro', '>= 1.0.0'
 
