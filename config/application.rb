@@ -27,5 +27,6 @@ module TeamUpToday
     config.assets.precompile += %w(.svg .eot .woff .ttf)
 
     config.autoload_paths << "#{Rails.root}/app/lib"
+    config.autoload_paths << "#{Rails.root}/app/uploaders"
   end
 end
