@@ -11,8 +11,9 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    puts 'THESE PROFILES'
+    # puts params[:profile].inspect
     user_of_profile.profile.update_attributes(profile_params)
-    puts user_of_profile.profile.id
     redirect_to profile_path(user_of_profile.profile.id)
   end
 
@@ -27,6 +28,8 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :avatar)
+    group_interests_string = params[:profile][:group_type_interests].join(', ')
+    params[:profile][:group_type_interests] = group_interests_string == '' ? group_interests_string : group_interests_string[0...-2]
+    params.require(:profile).permit(:first_name, :last_name, :avatar, :group_type_interests)
   end
 end

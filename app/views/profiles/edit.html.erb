@@ -4,6 +4,7 @@
   <%= f.input :avatar %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
+  <%= f.input :group_type_interests, as: :check_boxes, collection: Profile::CATEGORIES %>
 
   <%= f.submit 'Update' %>
 <% end %>
