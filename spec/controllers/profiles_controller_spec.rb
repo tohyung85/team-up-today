@@ -52,8 +52,7 @@ RSpec.describe ProfilesController, type: :controller do
         patch :update, id: profile.id, profile: {
           first_name: 'Johnny',
           last_name: 'Doe',
-          group_type_interests: ['Ecommerce', 'Mastermind', ''],
-          languages: 'English, Chinese'
+          group_type_interests: ['Ecommerce', 'Mastermind', '']
         }
         profile.reload
         expect(profile.first_name).to eq 'Johnny'

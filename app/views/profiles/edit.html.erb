@@ -14,6 +14,14 @@
       <%= link_to_add_association 'add language', f, :languages %>
     </div>
   </div>
+  <div id='skills'>
+    <%= f.simple_fields_for :skills do |skill| %>
+      <%= render 'skill_fields', f: skill %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add skills', f, :skills %>
+    </div>
+  </div>
 
   <%= f.submit 'Update' %>
 <% end %>
