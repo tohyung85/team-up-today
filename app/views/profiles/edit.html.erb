@@ -1,11 +1,11 @@
 <h1>Edit User Profile</h1>
 
 <%= simple_form_for @profile do |f| %>
+  <%= render 'profile_image', image: f.object.avatar %>
   <%= f.input :avatar %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
-  <%= f.input :group_type_interests, as: :check_boxes, collection: Profile::CATEGORIES %>
-  <h3>Languages</h3>
+  <%= f.input :group_type_interests, as: :check_boxes, collection: Profile::CATEGORIES, checked: @profile.group_interests_array %>
   <div id='languages'>
     <%= f.simple_fields_for :languages do |language| %>
       <%= render 'language_fields', f: language %>
