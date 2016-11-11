@@ -5,6 +5,7 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :group_type_interests, as: :check_boxes, collection: Profile::CATEGORIES %>
+  <%= f.input :languages %>
 
   <%= f.submit 'Update' %>
 <% end %>

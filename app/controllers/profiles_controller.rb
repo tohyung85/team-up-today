@@ -11,8 +11,6 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    puts 'THESE PROFILES'
-    # puts params[:profile].inspect
     user_of_profile.profile.update_attributes(profile_params)
     redirect_to profile_path(user_of_profile.profile.id)
   end

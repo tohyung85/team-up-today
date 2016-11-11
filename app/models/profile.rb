@@ -7,4 +7,8 @@ class Profile < ActiveRecord::Base
   def group_interests_array
     group_type_interests.split(', ')
   end
+
+  def languages_string
+    languages.join(', ')[0...-2]
+  end
 end
