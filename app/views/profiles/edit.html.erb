@@ -5,7 +5,9 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :group_type_interests, as: :check_boxes, collection: Profile::CATEGORIES %>
-  <%= f.input :languages %>
+  <%= f.input :languages, input_html: { name: 'profile[languages(1i)]' }  %>
+  <%= link_to 'add language...', '#', id: 'add_language_link' %>
+<br/>
 
   <%= f.submit 'Update' %>
 <% end %>

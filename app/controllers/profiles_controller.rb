@@ -26,6 +26,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
+    puts params.inspect
     group_interests_string = params[:profile][:group_type_interests].join(', ')
     params[:profile][:group_type_interests] = group_interests_string == '' ? group_interests_string : group_interests_string[0...-2]
     params.require(:profile).permit(:first_name, :last_name, :avatar, :group_type_interests)

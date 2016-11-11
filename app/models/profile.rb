@@ -1,6 +1,7 @@
 class Profile < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   belongs_to :user
+  has_many :languages
 
   CATEGORIES = %w(ECommerce Blogging Mastermind).freeze
 
