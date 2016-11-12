@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   root 'static_pages#landing_page'
   resources :profiles, only: [:edit, :show, :update, :index]
+  resources :all_languages, defaults: { format: 'json' }, only: [:create, :index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
