@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111232158) do
+ActiveRecord::Schema.define(version: 20161112002234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "all_languages", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "all_languages", ["name"], name: "index_all_languages_on_name", using: :btree
 
   create_table "languages", force: true do |t|
     t.string   "name"
