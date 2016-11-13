@@ -5,6 +5,8 @@ class Profile < ActiveRecord::Base
   accepts_nested_attributes_for :languages, allow_destroy: true
   has_many :skills
   accepts_nested_attributes_for :skills, allow_destroy: true
+  has_many :user_work_samples
+  accepts_nested_attributes_for :user_work_samples, allow_destroy: true
 
   CATEGORIES = %w(ECommerce Blogging Mastermind).freeze
 

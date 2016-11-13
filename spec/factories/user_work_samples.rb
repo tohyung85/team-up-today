@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :skill do
-    name 'Ruby on Rails'
+  factory :user_work_sample do
+    title 'sample work'
     association :profile
   end
 end

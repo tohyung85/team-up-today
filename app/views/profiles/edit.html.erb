@@ -24,6 +24,10 @@
     </div>
   </div>
   <%= f.input :website %>
+  <%= f.simple_fields_for :user_work_samples do |work_sample| %>
+    <%= work_sample.input :title %>
+    <%= work_sample.input :sample_image %>
+  <% end %>
 
   <%= f.submit 'Update' %>
 <% end %>

@@ -1,0 +1,2 @@
+class UserWorkSamplesController < ApplicationController
+end

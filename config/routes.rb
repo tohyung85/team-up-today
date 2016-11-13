@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :profiles, only: [:edit, :show, :update, :index]
   resources :all_languages, defaults: { format: 'json' }, only: [:create, :index]
   resources :all_skills, defaults: { format: 'json' }, only: [:create, :index]
+  resources :user_work_samples, only: [:create, :index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
