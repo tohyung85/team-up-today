@@ -15,7 +15,7 @@
       <%= link_to_add_association 'add language', f, :languages %>
     </div>
   </div>
-  <div id='skills'>
+  <div id='skills', data-searchurl=<%= url_for(all_skills_path) %>>
     <%= f.simple_fields_for :skills do |skill| %>
       <%= render 'skill_fields', f: skill %>
     <% end %>
