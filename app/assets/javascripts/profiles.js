@@ -1,4 +1,13 @@
 $(function(){
+
+  $('form.edit_profile').on('keypress keyup', function(e){
+    var keyCode = e.keyCode || e.which;
+    if (keyCode === 13) {
+      e.preventDefault();
+      return false;
+    }
+  });
+
   $("#languages").on('focus', 'input.language-input' ,function(){
     $(this).parent().parent().find('.search-result').removeClass('hidden');
     $(this).parent().parent().find('.search-result').show();

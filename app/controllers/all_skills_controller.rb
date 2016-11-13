@@ -1,7 +1,7 @@
 class AllSkillsController < ApplicationController
   respond_to :json
   def index
-    skills = AllSkill.where(['name LIKE ?', "#{params[:input_string].capitalize}%"])
+    skills = AllSkill.where(['lower(name) LIKE ?', "#{params[:input_string].downcase}%"])
     @skill_arr = []
     skills.each do |skill|
       @skill_arr << skill.name

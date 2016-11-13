@@ -53,7 +53,17 @@ RSpec.describe ProfilesController, type: :controller do
           first_name: 'Johnny',
           last_name: 'Doe',
           group_type_interests: ['Ecommerce', 'Mastermind', ''],
-          website: 'http://www.hello.com'
+          website: 'http://www.hello.com',
+          languages_attributes: {
+            first: {
+              name: 'English'
+            }
+          },
+          skills_attributes: {
+            first: {
+              name: 'Ruby'
+            }
+          }
         }
         profile.reload
         expect(profile.first_name).to eq 'Johnny'
