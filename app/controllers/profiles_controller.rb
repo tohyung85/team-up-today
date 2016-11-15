@@ -32,7 +32,7 @@ class ProfilesController < ApplicationController
     params[:profile][:group_type_interests] = group_interests_string == '' ? group_interests_string : group_interests_string[0...-2]
     update_language_database(params[:profile][:languages_attributes])
     update_skill_database(params[:profile][:skills_attributes])
-    params.require(:profile).permit(:first_name, :last_name, :avatar, :website, :group_type_interests, languages_attributes: [:id, :name, :_destroy], skills_attributes: [:id, :name, :_destroy], user_work_samples_attributes: [:id, :title, :_destroy])
+    params.require(:profile).permit(:first_name, :last_name, :avatar, :website, :group_type_interests, :description, languages_attributes: [:id, :name, :_destroy], skills_attributes: [:id, :name, :_destroy], user_work_samples_attributes: [:id, :title, :_destroy])
   end
 
   def update_language_database(attributes)

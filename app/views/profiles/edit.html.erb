@@ -7,6 +7,7 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :group_type_interests, as: :check_boxes, collection: Profile::CATEGORIES, checked: @profile.group_interests_array %>
+  <%= f.input :description %>
   <div id='languages', data-searchurl=<%= url_for(all_languages_path) %>>
     <%= f.simple_fields_for :languages do |language| %>
       <%= render 'language_fields', f: language %>

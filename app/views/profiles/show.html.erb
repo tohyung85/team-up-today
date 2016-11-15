@@ -1,5 +1,15 @@
-<h1>User Profiles</h1>
+<div class='profile-page-outer col-xs-12 col-sm-offset-1 col-sm-10'>
 
-<% unless current_user.nil? %>
-  <%= link_to 'Edit', edit_profile_path(current_user.profile.id) %>
-<% end %>
+  <% unless current_user.nil? || @profile != current_user.profile %>
+    <%= link_to 'Edit', edit_profile_path(current_user.profile.id), class: 'edit-profile-button' %>
+  <% end %>
+  <br class='clear'/>
+
+  <div class='profile-div'>
+    <div class='user-details-section'>
+    </div>
+
+  </div>
+
+
+</div>
