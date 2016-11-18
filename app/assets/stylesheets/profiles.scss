@@ -13,7 +13,6 @@ $orange: #FFCC56;
 .profile-page-outer {
   margin-top: 40px;
   font-family: $font;
-
 }
 
 .profile-div {
@@ -35,6 +34,12 @@ $orange: #FFCC56;
   flex-direction: column;
 }
 
+.profile-work-images {
+  height: 150px;
+  width: 250px;
+  margin-right: 10px;
+}
+
 .user-name-preferences-description-section{
   padding-bottom: 30px;
   border-bottom: 10px solid $dark-green;
@@ -47,6 +52,15 @@ $orange: #FFCC56;
 
 .user-skills-experience-section{
   margin-top: 40px;
+}
+
+.user-work-samples-images-section {
+  padding-bottom: 30px;
+  border-bottom: 10px solid $dark-green;  
+}
+
+.user-project-images-section {
+  padding-bottom: 30px;
 }
 
 .profile-label-box {

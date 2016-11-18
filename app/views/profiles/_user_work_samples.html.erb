@@ -1,0 +1,14 @@
+<div class='skill-experience-subsection'>
+  <div class='col-sm-3'>
+    <h4 class='profile-label-box'><%= type %></h4>
+  </div>
+
+  <div class='user-work-samples-images-section col-sm-9'>
+    <div>
+      <%f.each do |entry| %>
+        <%= image_tag entry.sample_image, class: 'profile-work-images' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br class='clear'/>

@@ -31,7 +31,11 @@
     <div class='user-skills-experience-section'>
       <%= render 'user_lang_skills', f: @profile.languages, type: 'Languages' %>
       <%= render 'user_lang_skills', f: @profile.skills, type: 'My Skills' %>
+      <%= render 'user_profile_fields', f: @profile.website, type: 'My Website' %>
+      <%= render 'user_work_samples', f: @profile.user_work_samples, type: 'Work Samples' unless @profile.user_work_samples.nil?%>      
+      <%= render 'user_projects', f: @profile.user_work_samples, type: 'My Projects' unless @profile.user_work_samples.nil?%> 
     </div>
+    <div></div>
 
   </div>
 

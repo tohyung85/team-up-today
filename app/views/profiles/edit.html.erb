@@ -7,7 +7,9 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :group_type_interests, as: :check_boxes, collection: Profile::CATEGORIES, checked: @profile.group_interests_array %>
+  <br/>
   <%= f.input :description %>
+  <br/>
   <div id='languages', data-searchurl=<%= url_for(all_languages_path) %>>
     <%= f.simple_fields_for :languages do |language| %>
       <%= render 'language_fields', f: language %>
@@ -16,6 +18,7 @@
       <%= link_to_add_association 'add language', f, :languages %>
     </div>
   </div>
+  <br/>
   <div id='skills', data-searchurl=<%= url_for(all_skills_path) %>>
     <%= f.simple_fields_for :skills do |skill| %>
       <%= render 'skill_fields', f: skill %>
@@ -24,11 +27,17 @@
       <%= link_to_add_association 'add skills', f, :skills %>
     </div>
   </div>
+  <br/>
   <%= f.input :website %>
-  <%= f.simple_fields_for :user_work_samples do |work_sample| %>
-    <%= work_sample.input :title %>
-    <%= work_sample.input :sample_image %>
-  <% end %>
-
+  <br/>
+  <div id='user_work_samples'>
+    <%= f.simple_fields_for :user_work_samples do |work_sample| %>
+      <%= render 'user_work_sample_fields', f: work_sample %>
+    <% end %>
+  </div>
+  <div class='links'>
+      <%= link_to_add_association 'add work_sample', f, :user_work_samples %>
+  </div>
+  <br/>
   <%= f.submit 'Update' %>
 <% end %>
