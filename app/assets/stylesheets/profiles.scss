@@ -1,3 +1,97 @@
-// Place all the styles related to the profiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$grey: #E7E6E2;
+$blue: #94B4BB;
+$border-red: #BD5B73;
+$dark-green : #206E80;
+$green: #B6D7A8;
+$yellow: #FCD04C;
+$red: #E06665;
+$pink: #D45D78;
+$font: 'futura_oblique';
+$light-blue: #86CCDD;
+$orange: #FFCC56;
+
+.profile-page-outer {
+  margin-top: 40px;
+  font-family: $font;
+}
+
+.profile-div {
+  margin-top: 30px;
+}
+
+.edit-profile-button {
+  background-color: $light-blue;
+  float: right;
+  color: $red;
+  width: 50px;
+  text-align: center;
+}
+
+.photo-description-label-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profile-work-images {
+  height: 150px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.user-name-preferences-description-section{
+  padding-bottom: 30px;
+  border-bottom: 10px solid $dark-green;
+}
+
+.user-description-box.profile-input-box{
+  height: 100px;
+  margin-top: 6%;
+}
+
+.user-skills-experience-section{
+  margin-top: 40px;
+}
+
+.user-work-samples-images-section {
+  padding-bottom: 30px;
+  border-bottom: 10px solid $dark-green;  
+}
+
+.user-project-images-section {
+  padding-bottom: 30px;
+}
+
+.profile-label-box {
+  margin-top: 0px;
+  background-color: $red;
+  color: $orange;
+  text-align: center;
+  width: 100%;
+}
+
+.profile-input-box {
+  background-color: $orange;
+  color: $red;
+  width: 100%;
+  padding: 0px;
+  margin:0px;
+}
+
+.profile-input-box h3{
+  margin: 0px;
+  padding: 10px;
+}
+
+.profile-input-box p{
+  margin: 0px;
+  padding: 0px;
+  padding-left: 5px;
+}
+
+.skill-experience-subsection {
+  margin: 0px;
+  margin-top: 30px;
+  padding: 0px;
+}

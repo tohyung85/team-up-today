@@ -11,10 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108121032) do
+ActiveRecord::Schema.define(version: 20161115114930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "all_languages", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "all_languages", ["name"], name: "index_all_languages_on_name", using: :btree
+
+  create_table "all_skills", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "all_skills", ["name"], name: "index_all_skills_on_name", using: :btree
+
+  create_table "languages", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "profile_id"
+  end
+
+  add_index "languages", ["name"], name: "index_languages_on_name", using: :btree
+  add_index "languages", ["profile_id"], name: "index_languages_on_profile_id", using: :btree
 
   create_table "profiles", force: true do |t|
     t.integer  "user_id"
@@ -24,9 +50,30 @@ ActiveRecord::Schema.define(version: 20161108121032) do
     t.datetime "updated_at"
     t.string   "avatar"
     t.string   "group_type_interests", default: ""
+    t.string   "website"
+    t.text     "description"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "skills", force: true do |t|
+    t.string   "name"
+    t.integer  "profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "skills", ["profile_id"], name: "index_skills_on_profile_id", using: :btree
+
+  create_table "user_work_samples", force: true do |t|
+    t.string   "title"
+    t.string   "sample_image"
+    t.integer  "profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_work_samples", ["profile_id"], name: "index_user_work_samples_on_profile_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

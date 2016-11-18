@@ -22,6 +22,10 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def after_sign_up_path_for(*)
+    '/profiles/' + current_user.profile.id.to_s + '/edit' # Or :prefix_to_your_route
+  end
+
   def sign_up_params
     devise_parameter_sanitizer.sanitize(:sign_up)
     params.require(:user).permit(:email, :password, profile_attributes: [:first_name, :last_name])

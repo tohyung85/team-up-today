@@ -51,11 +51,25 @@ RSpec.describe ProfilesController, type: :controller do
       it 'should allow user to update profile' do
         patch :update, id: profile.id, profile: {
           first_name: 'Johnny',
-          last_name: 'Doe'
+          last_name: 'Doe',
+          group_type_interests: ['Ecommerce', 'Mastermind', ''],
+          website: 'http://www.hello.com',
+          languages_attributes: {
+            first: {
+              name: 'English'
+            }
+          },
+          skills_attributes: {
+            first: {
+              name: 'Ruby'
+            }
+          }
         }
         profile.reload
         expect(profile.first_name).to eq 'Johnny'
         expect(profile.last_name).to eq 'Doe'
+        expect(profile.group_type_interests).to eq 'Ecommerce, Mastermind'
+        expect(profile.website).to eq 'http://www.hello.com'
         expect(response).to redirect_to profile_path(profile)
       end
     end

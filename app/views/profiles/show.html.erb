@@ -1,5 +1,43 @@
-<h1>User Profiles</h1>
+<div class='profile-page-outer col-xs-12 col-sm-offset-1 col-sm-10'>
 
-<% unless current_user.nil? %>
-  <%= link_to 'Edit', edit_profile_path(current_user.profile.id) %>
-<% end %>
+  <% unless current_user.nil? || @profile != current_user.profile %>
+    <%= link_to 'Edit', edit_profile_path(current_user.profile.id), class: 'edit-profile-button' %>
+  <% end %>
+  <br class='clear'/>
+
+  <div class='profile-div'>
+    <div class='user-details-section'>
+      <div class='photo-description-label-section col-sm-3'>
+        <%= image_tag @profile.avatar, class: 'user-photo' %>
+        <br/>
+        <h4 class='profile-label-box'>My description</h4>
+      </div>
+
+      <div class='user-name-preferences-description-section col-sm-9'>
+        <div class='user-name-and-preference profile-input-box'>
+          <h3>I am <%= @profile.first_name %> <%= @profile.last_name%></h3>
+          <h3>
+            I would like to work in 
+            <%= @profile.group_type_interests %> Groups
+          </h3>
+        </div>
+
+        <div class='user-description-box profile-input-box'><p><%= @profile.description%></p></div>
+
+      </div>
+    </div>
+    <br class='clear'/>
+
+    <div class='user-skills-experience-section'>
+      <%= render 'user_lang_skills', f: @profile.languages, type: 'Languages' %>
+      <%= render 'user_lang_skills', f: @profile.skills, type: 'My Skills' %>
+      <%= render 'user_profile_fields', f: @profile.website, type: 'My Website' %>
+      <%= render 'user_work_samples', f: @profile.user_work_samples, type: 'Work Samples' unless @profile.user_work_samples.nil?%>      
+      <%= render 'user_projects', f: @profile.user_work_samples, type: 'My Projects' unless @profile.user_work_samples.nil?%> 
+    </div>
+    <div></div>
+
+  </div>
+
+
+</div>

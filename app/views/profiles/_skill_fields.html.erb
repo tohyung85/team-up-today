@@ -1,0 +1,5 @@
+<div class='nested-fields'>
+  <%= f.input :name, input_html: { class: 'skill-input' } %>
+  <div class='search-result hidden'><p class='individual-result'><%= f.object.name%></p></div>  
+  <%= link_to_remove_association 'remove skill', f %>
+</div>

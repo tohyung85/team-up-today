@@ -1,0 +1,16 @@
+<div class='skill-experience-subsection'>
+  <div class='col-sm-3'>
+    <h4 class='profile-label-box'><%= type %></h4>
+  </div>
+
+  <div class='col-sm-9'>
+    <div class='profile-input-box'>
+      <p>
+        <%f.each do |entry| %>
+          <%= entry.name %>, 
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
+<br class='clear'/>
