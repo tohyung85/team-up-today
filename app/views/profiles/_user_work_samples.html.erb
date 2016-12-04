@@ -6,9 +6,13 @@
   <div class='user-work-samples-images-section col-sm-9'>
     <div>
       <%f.each do |entry| %>
-        <%= image_tag entry.sample_image, class: 'profile-work-images' %>
+        <%= link_to('#', 'data-target' => "#workSampleModal", 'data-toggle' => "modal", 'class' => 'user-work-sample-image-link', 'data-worksamplemedurl' => entry.sample_image.medium) do %>
+          <%= image_tag entry.sample_image.thumb, class: 'profile-work-images' %>
+        <% end %>
       <% end %>
     </div>
   </div>
 </div>
 <br class='clear'/>
+
+<%= render 'user_work_samples/user_work_sample_modal' %>
