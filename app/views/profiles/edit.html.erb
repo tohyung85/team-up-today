@@ -1,43 +1,65 @@
 <%= javascript_include_tag 'profiles' %>
-<h1>Edit User Profile</h1>
-
-<%= simple_form_for @profile do |f| %>
-  <%= render 'profile_image', image: f.object.avatar %>
-  <%= f.input :avatar %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :group_type_interests, as: :check_boxes, collection: Profile::CATEGORIES, checked: @profile.group_interests_array %>
-  <br/>
-  <%= f.input :description %>
-  <br/>
-  <div id='languages', data-searchurl=<%= url_for(all_languages_path) %>>
-    <%= f.simple_fields_for :languages do |language| %>
-      <%= render 'language_fields', f: language %>
-    <% end %>
-    <div class='links'>
-      <%= link_to_add_association 'add language', f, :languages %>
+<div class='edit-profile-form col-sm-10 col-sm-offset-1 col-xs-12'>
+  <%= simple_form_for @profile do |f| %>
+    <div class='edit-profile-top-section col-xs-12'>
+      <div class='edit-profile-avatar-section col-sm-3'>
+        <%= render 'profile_image', image: f.object.avatar %>
+        <%= f.input :avatar, label: false %>
+      </div>
+      <div class='edit-profile-name-section col-sm-6'>
+        <h4 class='edit-profile-label-box col-sm-4'>My first name</h4>
+        <%= f.input :first_name, label: false, wrapper_html: {class: 'edit-profile-input-wrapper col-sm-8'} %>
+        <br class='clear'/>
+        <br class='clear'/>
+        <br class='clear'/>
+        <h4 class='edit-profile-label-box col-sm-4'>My last name</h4>
+        <%= f.input :last_name, label: false, wrapper_html: {class: 'edit-profile-input-wrapper col-sm-8'} %>
+      </div>
+      <div class='edit-profile-group-interests-section col-sm-3'>
+        <%= f.input :group_type_interests, as: :check_boxes, collection: Profile::CATEGORIES, checked: @profile.group_interests_array, label: false %>
+      </div>
     </div>
-  </div>
-  <br/>
-  <div id='skills', data-searchurl=<%= url_for(all_skills_path) %>>
-    <%= f.simple_fields_for :skills do |skill| %>
-      <%= render 'skill_fields', f: skill %>
-    <% end %>
-    <div class='links'>
-      <%= link_to_add_association 'add skills', f, :skills %>
+    <br/>
+    <h4 class='edit-profile-label-box col-sm-3'>My description</h4>
+    <%= f.input :description, label: false, wrapper_html: {class: 'edit-profile-input-wrapper col-sm-9'}, input_html: {class: 'description-input'} %>
+    <br/>
+      <h4 class='edit-profile-label-box col-sm-3'>Languages</h4>
+      <div class='col-sm-9 edit-profile-input-wrapper'>
+        <div id='languages', data-searchurl=<%= url_for(all_languages_path) %>>
+          <%= f.simple_fields_for :languages do |language| %>
+            <%= render 'language_fields', f: language %>
+          <% end %>          
+            <%= link_to_add_association 'add language', f, :languages %>          
+        </div>
+      </div>
+    <br class='clear'/>
+    <h4 class='edit-profile-label-box col-sm-3'>Skills</h4>
+    <div class='col-sm-9 edit-profile-input-wrapper'>
+      <div id='skills', data-searchurl=<%= url_for(all_skills_path) %>>
+        <%= f.simple_fields_for :skills do |skill| %>
+          <%= render 'skill_fields', f: skill %>
+        <% end %>
+        <div class='links'>
+          <%= link_to_add_association 'add skills', f, :skills %>
+        </div>
+      </div>
     </div>
-  </div>
-  <br/>
-  <%= f.input :website %>
-  <br/>
-  <div id='user_work_samples'>
-    <%= f.simple_fields_for :user_work_samples do |work_sample| %>
-      <%= render 'user_work_sample_fields', f: work_sample %>
-    <% end %>
-  </div>
-  <div class='links'>
-      <%= link_to_add_association 'add work_sample', f, :user_work_samples %>
-  </div>
-  <br/>
-  <%= f.submit 'Update' %>
-<% end %>
+    <br/>
+    <h4 class='edit-profile-label-box col-sm-3'>My website</h4>
+    <%= f.input :website, label: false, wrapper_html: {class: 'edit-profile-input-wrapper col-sm-9'} %>
+    <br class= 'clear'/>
+    <h4 class='edit-profile-label-box col-sm-3'>Skills</h4>
+    <div class='col-sm-9 edit-profile-input-wrapper'>
+      <div id='user_work_samples'>
+        <%= f.simple_fields_for :user_work_samples do |work_sample| %>
+          <%= render 'user_work_sample_fields', f: work_sample %>
+        <% end %>
+      </div>
+      <div class='links'>
+          <%= link_to_add_association 'add work_sample', f, :user_work_samples %>
+      </div>
+    </div>
+    <br/>
+    <%= f.submit 'Update', class: 'col-sm-offset-3 edit-profile-update-button' %>
+  <% end %>
+</div>

@@ -1,0 +1,83 @@
+$form-color: #E6F0F1;
+$grey: #E7E6E2;
+$blue: #94B4BB;
+$border-red: #BD5B73;
+$dark-green : #206E80;
+$green: #B6D7A8;
+$yellow: #FCD04C;
+$red: #E06665;
+$pink: #D45D78;
+$font: 'futura_oblique';
+$light-blue: #86CCDD;
+$orange: #FFCC56;
+$link-colors: #83CCDE;
+
+.edit-profile-form {
+  margin-top: 100px;
+}
+
+.edit-profile-label-box {
+  margin-top: 0px;
+  background-color: $red;
+  color: $orange;
+  text-align: center;
+  font-size: 15px;
+  padding-bottom: 9px;
+  padding-top: 9px;
+  width: 100%;
+}
+
+.edit-profile-input-wrapper a {
+  background-color: $link-colors;
+  color: $red;
+  padding: 3px;
+  margin-top: 3px;
+  width: 150px;
+
+}
+
+textarea.form-control.description-input {
+    height: 150px;
+}
+
+.input.edit-profile-input-wrapper {
+  margin: 0px;
+  padding: 0px;
+}
+
+div.edit-profile-input-wrapper {
+  margin: 0px;
+  padding: 0px;
+}
+
+input.form-control, textarea.form-control {
+  // width: 70%;
+  border: 1px solid $form-color;
+  background-color: $form-color;
+  border-radius: 0px; 
+}
+
+.checkbox label {
+  float: right;
+  font-size: 15px;
+  display: block;
+  padding-left: 15px;
+  // text-indent: -15px;
+
+}
+
+.check_boxes {
+  display: flex;
+  flex-direction: column;
+}
+
+input.check_boxes {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;  
+}

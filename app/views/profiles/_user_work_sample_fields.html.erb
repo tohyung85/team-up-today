@@ -1,5 +1,5 @@
 <div class='nested-fields'>
-  <%= f.input :title, input_html: {class: 'work-sample-title-input'} %>
-  <%= f.input :sample_image, input_html: {class: 'work-sample-image-input'} %>
+  <%= f.input :title, input_html: {class: 'work-sample-title-input'}, label: false %>
+  <%= f.input :sample_image, input_html: {class: 'work-sample-image-input'}, label: false %>
   <%= link_to_remove_association 'remove work sample', f %>
 </div>
