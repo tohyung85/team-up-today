@@ -1,5 +1,11 @@
 <div class='nested-fields'>
-  <%= f.input :title, input_html: {class: 'work-sample-title-input'}, label: false %>
-  <%= f.input :sample_image, input_html: {class: 'work-sample-image-input'}, label: false %>
+      
+  <%= f.input :sample_image, input_html: {class: 'work-sample-image-input'}, label: false, wrapper_html: {class: 'col-sm-2 edit-profile-input-wrapper'} %>
+  <div class='work-samples-title col-sm-offset-1 col-sm-9'>
+    <h4 class='edit-profile-label-box col-xs-3'>Title</h4>
+    <%= f.input :title, input_html: {class: 'work-sample-title-input'}, label: false, wrapper_html: {class: 'col-xs-9 edit-profile-input-wrapper'}%>  
+  </div>
+  <br class='clear' />
   <%= link_to_remove_association 'remove work sample', f %>
 </div>
+</br>

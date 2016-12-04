@@ -15,13 +15,18 @@
         <h4 class='edit-profile-label-box col-sm-4'>My last name</h4>
         <%= f.input :last_name, label: false, wrapper_html: {class: 'edit-profile-input-wrapper col-sm-8'} %>
       </div>
+
       <div class='edit-profile-group-interests-section col-sm-3'>
-        <%= f.input :group_type_interests, as: :check_boxes, collection: Profile::CATEGORIES, checked: @profile.group_interests_array, label: false %>
+        <h4 class='edit-profile-label-box'>Group type interests</h4>
+        <%= f.input :group_type_interests, as: :check_boxes, collection: Profile::CATEGORIES, checked: @profile.group_interests_array, label: false%>          
       </div>
     </div>
+    <br class='clear'/>
     <br/>
+
     <h4 class='edit-profile-label-box col-sm-3'>My description</h4>
     <%= f.input :description, label: false, wrapper_html: {class: 'edit-profile-input-wrapper col-sm-9'}, input_html: {class: 'description-input'} %>
+    <br class= 'clear'/>
     <br/>
       <h4 class='edit-profile-label-box col-sm-3'>Languages</h4>
       <div class='col-sm-9 edit-profile-input-wrapper'>
@@ -33,6 +38,8 @@
         </div>
       </div>
     <br class='clear'/>
+    <br/>
+
     <h4 class='edit-profile-label-box col-sm-3'>Skills</h4>
     <div class='col-sm-9 edit-profile-input-wrapper'>
       <div id='skills', data-searchurl=<%= url_for(all_skills_path) %>>
@@ -44,11 +51,15 @@
         </div>
       </div>
     </div>
+    <br class='clear'/>
     <br/>
+
     <h4 class='edit-profile-label-box col-sm-3'>My website</h4>
     <%= f.input :website, label: false, wrapper_html: {class: 'edit-profile-input-wrapper col-sm-9'} %>
-    <br class= 'clear'/>
-    <h4 class='edit-profile-label-box col-sm-3'>Skills</h4>
+    <br class='clear'/>
+    <br/>
+
+    <h4 class='edit-profile-label-box col-sm-3'>Work Samples</h4>
     <div class='col-sm-9 edit-profile-input-wrapper'>
       <div id='user_work_samples'>
         <%= f.simple_fields_for :user_work_samples do |work_sample| %>
@@ -59,7 +70,11 @@
           <%= link_to_add_association 'add work_sample', f, :user_work_samples %>
       </div>
     </div>
+    <br class='clear'/>
     <br/>
+
     <%= f.submit 'Update', class: 'col-sm-offset-3 edit-profile-update-button' %>
   <% end %>
+    <br class='clear'/>
+    <br/>  
 </div>

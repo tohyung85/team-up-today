@@ -1,5 +1,24 @@
 $(function(){
 
+  $( ".checkbox input[type='checkbox']" ).each(function() {
+    var thisInput = $(this);
+    if(thisInput.prop("checked")) {
+      $(this).parent().addClass('checked');  
+    }    
+  });
+
+  $('.checkbox label').click(function(e){
+    if (e.target.tagName.toUpperCase() === "LABEL") {
+        return; //clicks on checkbox gets called twice! once on label once on input. So have to shutoff one.
+    }
+    var thisInput = $(this);
+    if(thisInput.hasClass("checked")) {
+      thisInput.removeClass("checked");
+    } else {
+      thisInput.addClass("checked");
+    }
+  });
+
   $('form.edit_profile').on('keypress keyup', function(e){
     var keyCode = e.keyCode || e.which;
     if (keyCode === 13) {
